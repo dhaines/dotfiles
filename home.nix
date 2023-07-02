@@ -20,8 +20,9 @@
   programs.urxvt = {
     enable = true;
     extraConfig = {
-      background = "black";
-      foreground = "white";
+      background = "Black";
+      foreground = "White";
+      saveLines = 65535;
     };
   };
 
