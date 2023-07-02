@@ -3,5 +3,5 @@
     ./hardware-configuration.nix
     ../../configuration.nix
   ];
-  hostName = "nixos2";
+  networking.hostName = "nixos2";
 }
