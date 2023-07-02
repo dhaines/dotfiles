@@ -10,12 +10,7 @@
     userEmail = "dhaines@gmail.com";
   };
 
-  home.packages = with pkgs; [
-    file
-    firefox
-    rxvt-unicode
-    terminus_font
-  ];
+  home.packages = with pkgs; [];
 
   programs.bash = {
     enable = true;
