@@ -11,19 +11,10 @@
   };
 
   home.packages = with pkgs; [
-    alejandra
     file
     firefox
-    gawk
-    gnused
-    gnutar
-    jq
-    lsof
     rxvt-unicode
-    strace
     terminus_font
-    tree
-    which
   ];
 
   programs.bash = {
