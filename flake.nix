@@ -22,7 +22,20 @@
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./hosts/nixos
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.dhaines = import ./home.nix;
+          }
+        ];
+      };
+      "nixos2" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos2
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
