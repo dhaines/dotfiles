@@ -19,6 +19,10 @@
 
   programs.urxvt = {
     enable = true;
+    extraConfig = {
+      background = "black";
+      foreground = "white";
+    };
   };
 
   home.stateVersion = "23.05";
