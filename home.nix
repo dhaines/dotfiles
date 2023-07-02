@@ -10,7 +10,7 @@
     userEmail = "dhaines@gmail.com";
   };
 
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [terminus-nerdfont];
 
   programs.bash = {
     enable = true;
