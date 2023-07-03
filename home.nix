@@ -26,7 +26,7 @@
     };
     fonts = [
       "xft:Terminess Nerd Font
-    ]
+    ];
   };
 
   home.stateVersion = "23.05";
