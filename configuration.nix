@@ -28,6 +28,7 @@
 
   nix.settings = {
     "tarball-ttl" = 1;
+    trusted-users = [ dhaines ];
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
