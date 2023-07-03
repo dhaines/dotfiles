@@ -26,6 +26,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  console.useXkbConfig = true;
+
   systemd.network.enable = true;
 
   time.timeZone = "EST5EDT";
