@@ -44,7 +44,7 @@
   };
 
   nix.settings = {
-    "tarball-ttl" = 60;
+    "tarball-ttl" = 1;
   };
 
   home.stateVersion = "23.05";
