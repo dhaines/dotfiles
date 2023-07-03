@@ -18,8 +18,10 @@
   };
 
   # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.configurationLimit = 32;
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.editor = false;
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.consoleMode = "auto";
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
