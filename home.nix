@@ -10,6 +10,7 @@
     enable = true;
     userName = "David Haines";
     userEmail = "dhaines@gmail.com";
+    lfs.enable = true;
   };
 
   programs.bash = {
@@ -28,9 +29,6 @@
   };
 
   programs.less.enable = true;
-
-  programs.git.enable = true;
-  programs.git.lfs.enable = true;
 
   programs.urxvt = {
     enable = true;
