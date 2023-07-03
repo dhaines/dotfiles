@@ -24,6 +24,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.keyboard.zsa.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   systemd.network.enable = true;
