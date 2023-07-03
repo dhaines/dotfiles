@@ -4,13 +4,13 @@
   home.username = "dhaines";
   home.homeDirectory = "/home/dhaines";
 
+  home.packages = with pkgs; [terminus-nerdfont];
+
   programs.git = {
     enable = true;
     userName = "David Haines";
     userEmail = "dhaines@gmail.com";
   };
-
-  home.packages = with pkgs; [terminus-nerdfont];
 
   programs.bash = {
     enable = true;
@@ -27,6 +27,15 @@
     fonts = [
       "xft:Terminess Nerd Font:size=10"
     ];
+  };
+
+  programs.firefox - {
+    enable = true;
+  };
+  }
+
+  nix.settings = {
+    tarball-ttl = 60;
   };
 
   home.stateVersion = "23.05";
