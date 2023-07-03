@@ -27,7 +27,7 @@
   hardware.keyboard.zsa.enable = true;
 
   nix.settings = {
-    "tarball-ttl" = 1;
+    tarball-ttl = 1;
     trusted-users = [ "dhaines" ];
   };
 
