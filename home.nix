@@ -15,7 +15,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    historyControl = "ignoreboth";
+    historyControl = "ignoredups";
     historyIgnore = [
       "fg"
       "history"
