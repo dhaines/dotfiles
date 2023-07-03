@@ -24,6 +24,9 @@
       foreground = "White";
       saveLines = 65535;
     };
+    fonts = [
+      "xft:Terminess Nerd Font
+    ]
   };
 
   home.stateVersion = "23.05";
