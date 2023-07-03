@@ -26,6 +26,10 @@
 
   hardware.keyboard.zsa.enable = true;
 
+  nix.settings = {
+    "tarball-ttl" = 1;
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   systemd.network.enable = true;

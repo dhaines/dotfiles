@@ -46,10 +46,6 @@
 
   programs.firefox.enable = true;
 
-  nix.settings = {
-    "tarball-ttl" = 1;
-  };
-
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;
 }
