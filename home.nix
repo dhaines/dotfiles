@@ -15,6 +15,13 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    historyControl = "ignoreboth";
+    historyIgnore = [
+      fg
+      history
+      ls
+      pwd
+    ];
   };
 
   programs.urxvt = {
