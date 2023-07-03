@@ -27,6 +27,11 @@
     ];
   };
 
+  programs.less.enable = true;
+
+  programs.git.enable = true;
+  programs.git.lfs.enable = true;
+
   programs.urxvt = {
     enable = true;
     extraConfig = {
@@ -39,9 +44,7 @@
     ];
   };
 
-  programs.firefox = {
-    enable = true;
-  };
+  programs.firefox.enable = true;
 
   nix.settings = {
     "tarball-ttl" = 1;
