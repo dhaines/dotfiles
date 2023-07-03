@@ -32,7 +32,6 @@
   programs.firefox = {
     enable = true;
   };
-  }
 
   nix.settings = {
     "tarball-ttl" = 60;
