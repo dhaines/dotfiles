@@ -17,10 +17,10 @@
     enableCompletion = true;
     historyControl = "ignoreboth";
     historyIgnore = [
-      fg
-      history
-      ls
-      pwd
+      "fg"
+      "history"
+      "ls"
+      "pwd"
     ];
   };
 
