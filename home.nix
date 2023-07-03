@@ -25,7 +25,7 @@
       saveLines = 65535;
     };
     fonts = [
-      "xft:Terminess Nerd Font"
+      "xft:Terminess Nerd Font:size=12"
     ];
   };
 
