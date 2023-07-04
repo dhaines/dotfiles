@@ -4,7 +4,7 @@
   home.username = "dhaines";
   home.homeDirectory = "/home/dhaines";
 
-  home.packages = with pkgs; [terminus-nerdfont];
+  home.packages = with pkgs; [terminus-nerdfont neovim];
 
   programs.git = {
     enable = true;
