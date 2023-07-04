@@ -48,13 +48,9 @@
       default = {
         search.default = "DuckDuckGo";
         settings = {
-          "browser.newtabpage.activity-stream.discoverystream.saveToPocketCard.enabled" = false;
-          "browser.newtabpage.activity-stream.discoverystream.sendToPocket.enabled" = false;
-          "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-          "browser.newtabpage.activity-stream.showSponsored" = false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned" = "";
+          "browser.newtabpage.enabled" = false;
+          "extensions.pocket.enabled" = false;
+          
         };
       };
     };
