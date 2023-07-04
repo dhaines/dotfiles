@@ -50,7 +50,7 @@
         settings = {
           "browser.newtabpage.enabled" = false;
           "extensions.pocket.enabled" = false;
-          
+          "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
         };
       };
     };
