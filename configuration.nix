@@ -43,7 +43,6 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.xkbOptions = "ctrl:nocaps";
-  services.xserver.resolutions = [ { x = 1920; y = 1080; } ];
 
   services.openssh.enable = true;
 
