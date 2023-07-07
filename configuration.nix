@@ -24,6 +24,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   hardware.keyboard.zsa.enable = true;
 
   nix.settings = {
@@ -39,6 +41,8 @@
 
   documentation.man.generateCaches = true;
 
+  hardware.bluetooth.enable = true;
+
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.displayManager.defaultSession = "none+i3";
@@ -47,6 +51,14 @@
   services.openssh.enable = true;
 
   services.qemuGuest.enable = true;
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   users.users.dhaines = {
     isNormalUser = true;

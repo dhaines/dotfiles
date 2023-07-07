@@ -4,9 +4,20 @@
   home.username = "dhaines";
   home.homeDirectory = "/home/dhaines";
 
+  home.sessionVariables = {
+    DISABLE_TELEMETRY = "";
+  };
+
   home.packages = with pkgs; [
-    terminus-nerdfont
+    awscli2
+    cloud-nuke
+    jq
+    parallel
+    pavucontrol
     slack
+    terminus-nerdfont
+    terminus_font
+    terminus_font_ttf
   ];
 
   programs.git = {
@@ -41,7 +52,7 @@
       saveLines = 65535;
     };
     fonts = [
-      "xft:Terminess Nerd Font:size=10"
+      "xft:Terminus:size=9"
     ];
   };
 
@@ -49,12 +60,12 @@
     enable = true;
     profiles = {
       default = {
-        search.default = "DuckDuckGo";
-        settings = {
-          "browser.newtabpage.enabled" = false;
-          "extensions.pocket.enabled" = false;
-          "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
-        };
+        #search.default = "DuckDuckGo";
+        #settings = {
+          #"browser.newtabpage.enabled" = false;
+          #"extensions.pocket.enabled" = false;
+          #"browser.startup.homepage" = "chrome://browser/content/blanktab.html";
+        #};
       };
     };
   };
