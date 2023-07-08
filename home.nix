@@ -18,6 +18,9 @@
     terminus-nerdfont
     terminus_font
     terminus_font_ttf
+    unzip
+    zoom-us
+    openssl
   ];
 
   programs.git = {

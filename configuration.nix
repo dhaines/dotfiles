@@ -48,6 +48,9 @@
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.xkbOptions = "ctrl:nocaps";
 
+  networking.wireless.enable = true;
+  networking.wireless.userControlled.enable = true;
+
   services.openssh.enable = true;
 
   services.qemuGuest.enable = true;
@@ -75,4 +78,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 }
-
