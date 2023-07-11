@@ -45,7 +45,6 @@
 
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.xkbOptions = "ctrl:nocaps";
 
   networking.wireless.enable = true;

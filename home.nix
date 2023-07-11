@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "dhaines";
@@ -21,6 +21,7 @@
     unzip
     zoom-us
     openssl
+    mplayer
   ];
 
   programs.git = {
@@ -75,4 +76,22 @@
 
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;
+
+  xsession.windowManager.i3.enable = true;
+  xsession.windowManager.i3.config.modifier = "Mod4";
+  xsession.windowManager.i3.config.keybindings =
+    let modifier = config.xsession.windowManager.i3.config.modifier;
+    in
+    lib.mkOptionDefault {
+      "${modifier}+h" = "focus left";
+      "${modifier}+j" = "focus down";
+      "${modifier}+k" = "focus up";
+      "${modifier}+l" = "focus right";
+      "${modifier}+Shift+h" = "move left";
+      "${modifier}+Shift+j" = "move down";
+      "${modifier}+Shift+k" = "move up";
+      "${modifier}+Shift+l" = "move right";
+      "${modifier}+v" = null;
+      "${modifier}+backslash" = "split toggle";
+    };
 }
