@@ -65,12 +65,17 @@
     enable = true;
     profiles = {
       default = {
-        #search.default = "DuckDuckGo";
-        #settings = {
-          #"browser.newtabpage.enabled" = false;
-          #"extensions.pocket.enabled" = false;
-          #"browser.startup.homepage" = "chrome://browser/content/blanktab.html";
-        #};
+        search.default = "DuckDuckGo";
+        settings = {
+          "browser.newtabpage.enabled" = false;
+          "extensions.pocket.enabled" = false;
+          "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
+          "startup.homepage_welcome_url" = "";
+          "datareporting.policy.firstRunURL" = "";
+          "services.sync.username" = "dhaines@gmail.com";
+          "browser.aboutConfig.showWarning" = false;
+          "browser.tabs.firefox-view" = false;
+        };
       };
     };
   };
