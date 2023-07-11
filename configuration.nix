@@ -50,9 +50,12 @@
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  networking.firewall.checkReversePath = false;
+
   services.openssh.enable = true;
 
-  services.qemuGuest.enable = true;
+  #services.qemuGuest.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -64,7 +67,7 @@
 
   users.users.dhaines = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };

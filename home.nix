@@ -12,6 +12,8 @@
     awscli2
     cloud-nuke
     jq
+    mplayer
+    openssl
     parallel
     pavucontrol
     slack
@@ -19,9 +21,8 @@
     terminus_font
     terminus_font_ttf
     unzip
+    virt-manager
     zoom-us
-    openssl
-    mplayer
   ];
 
   programs.git = {
@@ -93,5 +94,7 @@
       "${modifier}+Shift+l" = "move right";
       "${modifier}+v" = null;
       "${modifier}+backslash" = "split toggle";
+      "${modifier}+d" = "exec ${pkgs.i3}/bin/i3-dmenu-desktop";
+      "${modifier}+Shift+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
     };
 }
