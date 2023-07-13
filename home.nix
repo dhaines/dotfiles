@@ -12,16 +12,22 @@
     awscli2
     cloud-nuke
     jq
+    kubectl
+    kubernetes-helm
     mplayer
+    ncmpc
     openssl
     parallel
     pavucontrol
     slack
+    talosctl
     terminus-nerdfont
     terminus_font
     terminus_font_ttf
     unzip
     virt-manager
+    xclip
+    yq
     zoom-us
   ];
 

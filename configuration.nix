@@ -53,6 +53,8 @@
   virtualisation.libvirtd.enable = true;
   networking.firewall.checkReversePath = false;
 
+  virtualisation.docker.enable = true;
+
   services.openssh.enable = true;
 
   #services.qemuGuest.enable = true;
@@ -67,7 +69,7 @@
 
   users.users.dhaines = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" "docker" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };

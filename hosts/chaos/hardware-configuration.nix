@@ -28,6 +28,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/disk/by-uuid/5f876319-b826-429c-aaef-8041023c122c";
+      fsType = "ext4";
+    };
+
   fileSystems."/opt" =
     { device = "/dev/disk/by-uuid/6fd144a7-0052-4bf7-b7db-ce601cddef3b";
       fsType = "ext4";
@@ -46,6 +51,7 @@
   swapDevices =
     [ { device = "/dev/disk/by-uuid/1fd87315-8be8-4c63-89e8-a522bd454571"; }
     ];
+
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
