@@ -33,6 +33,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/var/lib/libvirt" =
+    { device = "/dev/disk/by-uuid/9e9c20ee-cf18-4667-a718-29519ac1c964";
+      fsType = "ext4";
+    };
+
   fileSystems."/opt" =
     { device = "/dev/disk/by-uuid/6fd144a7-0052-4bf7-b7db-ce601cddef3b";
       fsType = "ext4";
@@ -64,4 +69,5 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.acpilight.enable = true;
 }

@@ -17,12 +17,21 @@
     EDITOR = "vim";
   };
 
+  environment.etc = {
+    "ovmf/edk2-x86_64-secure-code.fd" = {
+       source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
+   };
+  };
+
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.configurationLimit = 32;
-  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.configurationLimit = 16;
+  boot.loader.systemd-boot.consoleMode = "keep";
   boot.loader.systemd-boot.editor = false;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  #console.font = "default8x16";
+  console.font = "LatArCyrHeb-16";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -46,11 +55,16 @@
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.xkbOptions = "ctrl:nocaps";
+  services.xserver.libinput.touchpad.tapping = false;
+  services.xserver.libinput.touchpad.middleEmulation = false;
+
 
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
+  virtualisation.libvirtd.qemu.swtpm.enable = true;
   networking.firewall.checkReversePath = false;
 
   virtualisation.docker.enable = true;
@@ -59,6 +73,7 @@
 
   #services.qemuGuest.enable = true;
 
+  security.sudo.wheelNeedsPassword = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -69,10 +84,13 @@
 
   users.users.dhaines = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" "docker" "video" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

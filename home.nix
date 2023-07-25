@@ -11,14 +11,19 @@
   home.packages = with pkgs; [
     awscli2
     cloud-nuke
+    feh
+    file
     jq
     kubectl
     kubernetes-helm
     mplayer
     ncmpc
+    nmap
     openssl
     parallel
     pavucontrol
+    pwgen
+    scrot
     slack
     talosctl
     terminus-nerdfont
@@ -26,10 +31,14 @@
     terminus_font_ttf
     unzip
     virt-manager
+    wally-cli
+    whois
     xclip
     yq
     zoom-us
   ];
+
+  programs.zathura.enable = true;
 
   programs.git = {
     enable = true;
@@ -102,6 +111,10 @@
 
   xsession.windowManager.i3.enable = true;
   xsession.windowManager.i3.config.modifier = "Mod4";
+  xsession.windowManager.i3.config.startup = [
+    { command = "firefox"; }
+    { command = "slack"; }
+  ];
   xsession.windowManager.i3.config.keybindings =
     let modifier = config.xsession.windowManager.i3.config.modifier;
     in
