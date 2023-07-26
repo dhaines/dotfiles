@@ -45,6 +45,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   systemd.network.enable = true;
+  systemd.network.wait-online.anyInterface = true;
 
   time.timeZone = "EST5EDT";
 
@@ -58,6 +59,7 @@
   services.xserver.libinput.touchpad.tapping = false;
   services.xserver.libinput.touchpad.middleEmulation = false;
 
+  networking.useNetworkd = true;
 
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;
