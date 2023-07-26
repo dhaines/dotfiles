@@ -23,6 +23,7 @@
     openssl
     parallel
     pavucontrol
+    pstree
     pwgen
     scrot
     slack
@@ -30,6 +31,7 @@
     terminus-nerdfont
     terminus_font
     terminus_font_ttf
+    tree
     unzip
     virt-manager
     wally-cli
