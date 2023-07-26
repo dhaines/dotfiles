@@ -13,6 +13,7 @@
     cloud-nuke
     feh
     file
+    gnumeric
     jq
     kubectl
     kubernetes-helm
@@ -34,6 +35,7 @@
     wally-cli
     whois
     xclip
+    xdotool
     yq
     zoom-us
   ];
