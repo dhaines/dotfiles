@@ -84,6 +84,8 @@
     pulse.enable = true;
   };
 
+  services.usbmuxd.enable = true;
+
   users.users.dhaines = {
     isNormalUser = true;
     extraGroups = [ "wheel" "libvirtd" "docker" "video" ]; # Enable ‘sudo’ for the user.

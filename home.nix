@@ -14,6 +14,7 @@
     feh
     file
     gnumeric
+    ifuse
     jq
     kubectl
     kubernetes-helm
