@@ -22,6 +22,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	  ./configuration.nix
           ./hosts/nixos
           home-manager.nixosModules.home-manager
           {
@@ -35,6 +36,7 @@
       nixos2 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	  ./configuration.nix
           ./hosts/nixos2
           home-manager.nixosModules.home-manager
           {
@@ -48,6 +50,7 @@
       chaos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	  ./configuration.nix
           ./hosts/chaos
           home-manager.nixosModules.home-manager
           {
