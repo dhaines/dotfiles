@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -20,18 +20,15 @@
   environment.etc = {
     "ovmf/edk2-x86_64-secure-code.fd" = {
        source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
-   };
+    };
+    "resolv.conf".source = lib.mkForce "/run/systemd/resolve/resolv.conf";
   };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.configurationLimit = 16;
-  boot.loader.systemd-boot.consoleMode = "keep";
   boot.loader.systemd-boot.editor = false;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  #console.font = "default8x16";
-  console.font = "LatArCyrHeb-16";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -71,9 +68,9 @@
 
   virtualisation.docker.enable = true;
 
-  services.openssh.enable = true;
+  services.resolved.enable = true;
 
-  #services.qemuGuest.enable = true;
+  services.openssh.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
   security.rtkit.enable = true;
@@ -89,8 +86,7 @@
   users.users.dhaines = {
     isNormalUser = true;
     extraGroups = [ "wheel" "libvirtd" "docker" "video" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [];
   };
 
   programs._1password.enable = true;
@@ -103,4 +99,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+
+  #services.qemuGuest.enable = true;
+  #users.mutableUsers = false;
+  #users.users.dhaines.initialPassword = "1234qwer";
 }

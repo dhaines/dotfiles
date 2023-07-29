@@ -235,4 +235,13 @@
       "${modifier}+d" = "exec ${pkgs.i3}/bin/i3-dmenu-desktop";
       "${modifier}+Shift+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
     };
+  xsession.windowManager.i3.config.modes = {
+    resize = {
+      j = "resize grow height 5 px or 5 ppt";
+      Escape = "mode default";
+      h = "resize shrink width 5 px or 5 ppt";
+      l = "resize grow width 5 px or 5 ppt";
+      k = "resize shrink height 5 px or 5 ppt";
+    };
+  };
 }
