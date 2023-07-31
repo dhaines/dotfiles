@@ -61,7 +61,7 @@
 
   time.timeZone = "EST5EDT";
 
-  documentation.man.generateCaches = true;
+  documentation.man.generateCaches = false;
 
   hardware.bluetooth.enable = true;
 
@@ -124,6 +124,4 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
   #services.qemuGuest.enable = true;
-  #users.mutableUsers = false;
-  #users.users.dhaines.initialPassword = "1234qwer";
 }
