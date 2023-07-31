@@ -13,6 +13,7 @@
     cloud-nuke
     feh
     file
+    github-cli
     gnumeric
     ifuse
     jq
@@ -29,9 +30,7 @@
     scrot
     slack
     talosctl
-    terminus-nerdfont
     terminus_font
-    terminus_font_ttf
     tree
     unzip
     virt-manager
@@ -41,6 +40,19 @@
     xdotool
     yq
     zoom-us
+
+    cargo
+    fd
+    gnumake
+    lazygit
+    neovim
+    nodejs
+    python311
+    python311Packages.pip
+    python311Packages.pynvim
+    ripgrep
+    tree-sitter
+    nerdfonts
   ];
 
   programs.zathura.enable = true;
@@ -77,6 +89,7 @@
       saveLines = 65535;
     };
     fonts = [
+      "xft:SauceCodePro Nerd Font:size=9"
       "xft:Terminus:size=9"
     ];
   };
