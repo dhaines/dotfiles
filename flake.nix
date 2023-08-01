@@ -36,7 +36,8 @@
         impermanent = lib.nixosSystem {
           inherit system;
           modules = [
-	    ./configuration.nix
+            ./configuration.nix
+            ./impermanence.nix
             ./hosts/impermanent
 
             home-manager.nixosModules.home-manager
