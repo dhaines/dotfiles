@@ -51,7 +51,9 @@
             impermanence.nixosModules.impermanence
             {
               environment.persistence."/persist" = {
-                directories = [];
+                directories = [
+                  "/etc/ssh"
+                ];
               };
               environment.etc."machine-id".source = "/persist/etc/machine-id";
               environment.etc."machine-id".enable = false;
