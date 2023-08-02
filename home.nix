@@ -19,6 +19,7 @@
     jq
     kubectl
     kubernetes-helm
+    minicom
     mplayer
     ncmpc
     nmap
