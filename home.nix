@@ -42,17 +42,6 @@
     yq
     zoom-us
 
-    cargo
-    fd
-    gnumake
-    lazygit
-    neovim
-    nodejs
-    python311
-    python311Packages.pip
-    python311Packages.pynvim
-    ripgrep
-    tree-sitter
     nerdfonts
 
     linux-manual
