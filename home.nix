@@ -53,6 +53,10 @@
     ripgrep
     tree-sitter
     nerdfonts
+
+    linux-manual
+    man-pages
+    posix_man_pages
   ];
 
   programs.zathura.enable = true;
