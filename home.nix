@@ -47,6 +47,8 @@
     linux-manual
     man-pages
     posix_man_pages
+
+    pulsarctl
   ];
 
   programs.zathura.enable = true;
@@ -232,8 +234,8 @@
   xsession.windowManager.i3.enable = true;
   xsession.windowManager.i3.config.modifier = "Mod4";
   xsession.windowManager.i3.config.startup = [
-    { command = "firefox"; }
-    { command = "slack"; }
+    #{ command = "firefox"; }
+    #{ command = "slack"; }
   ];
   xsession.windowManager.i3.config.keybindings =
     let modifier = config.xsession.windowManager.i3.config.modifier;

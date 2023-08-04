@@ -69,6 +69,8 @@
   services.xserver.libinput.touchpad.tapping = false;
   services.xserver.libinput.touchpad.middleEmulation = false;
 
+  services.xserver.windowManager.i3.enable = true;
+
   networking.useNetworkd = true;
 
   networking.wireless.enable = true;
