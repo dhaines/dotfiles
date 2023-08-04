@@ -75,6 +75,16 @@
 
   programs.less.enable = true;
 
+  programs.neovim = {
+    enable = true;
+    withPython3 = true;
+    coc.enable = true;
+    plugins = with pkgs.vimPlugins; [
+      copilot-lua
+      copilot-cmp
+    ];
+  };
+
   programs.urxvt = {
     enable = true;
     extraConfig = {
@@ -249,6 +259,19 @@
       h = "resize shrink width 5 px or 5 ppt";
       l = "resize grow width 5 px or 5 ppt";
       k = "resize shrink height 5 px or 5 ppt";
+    };
+  };
+  programs.i3status = {
+    enable = true;
+    modules = {
+      "tztime utc" = {
+        position = 7;
+        settings = {
+          format = "%Y-%m-%d %H:%M:%S %Z";
+          timezone = "UTC";
+        };
+      };
+      "tztime local".settings.format = "%Y-%m-%d %H:%M:%S %Z";
     };
   };
 }

@@ -22,6 +22,20 @@
        source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
     };
     "resolv.conf".source = lib.mkForce "/run/systemd/resolve/resolv.conf";
+    "systemd/network/99-ethernet-default-dhcp.network.d/50-use-domains.conf".text = ''
+      [Network]
+      MulticastDNS=resolve
+
+      [DHCP]
+      UseDomains=true
+      '';
+    "systemd/network/99-wireless-client-dhcp.network.d/50-use-domains.conf".text = ''
+      [Network]
+      MulticastDNS=resolve
+
+      [DHCP]
+      UseDomains=true
+      '';
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -51,7 +65,6 @@
   hardware.bluetooth.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
   services.xserver.xkbOptions = "ctrl:nocaps";
   services.xserver.libinput.touchpad.tapping = false;
   services.xserver.libinput.touchpad.middleEmulation = false;
@@ -93,6 +106,9 @@
   programs._1password-gui.enable = true;
 
   programs.dconf.enable = true;
+
+  programs.vim.defaultEditor = true;
+  programs.vim.package = pkgs.vim-full;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
