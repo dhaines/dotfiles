@@ -9,9 +9,10 @@
 
   environment.systemPackages = with pkgs; [
     git
-    vim
     curl
   ];
+
+  environment.localBinInPath = true;
 
   environment.variables = {
     EDITOR = "vim";
@@ -111,6 +112,8 @@
 
   programs.vim.defaultEditor = true;
   programs.vim.package = pkgs.vim-full;
+
+  programs.npm.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

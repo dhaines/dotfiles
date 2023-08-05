@@ -43,13 +43,37 @@
     zoom-us
 
     nerdfonts
+    gnome.gnome-font-viewer
 
     linux-manual
     man-pages
     posix_man_pages
 
     pulsarctl
+
+    python311Packages.ipython
+
+    #neovim
+    gnumake
+    python311Packages.pip
+    python311Packages.pynvim
+    python311Full
+    nodejs
+    lazygit
+    cargo
+    tree-sitter
+    gcc
+    node2nix
   ];
+
+  xresources.extraConfig = builtins.readFile (
+    pkgs.fetchFromGitHub {
+      owner = "solarized";
+      repo = "xresources";
+      rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
+      sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
+    } + "/Xresources.dark"
+  );
 
   programs.zathura.enable = true;
 
@@ -80,23 +104,21 @@
   programs.neovim = {
     enable = true;
     withPython3 = true;
-    coc.enable = true;
+    withNodeJs = true;
+    #coc.enable = true;
     plugins = with pkgs.vimPlugins; [
-      copilot-lua
-      copilot-cmp
+      #copilot-lua
+      #copilot-cmp
     ];
   };
 
   programs.urxvt = {
     enable = true;
     extraConfig = {
-      background = "Black";
-      foreground = "White";
       saveLines = 65535;
     };
     fonts = [
-      "xft:SauceCodePro Nerd Font:size=9"
-      "xft:Terminus:size=9"
+      "xft:SauceCodePro Nerd Font Mono:pixelsize=15"
     ];
   };
 
