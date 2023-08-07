@@ -13,6 +13,7 @@
     cloud-nuke
     feh
     file
+    fping
     github-cli
     gnumeric
     ifuse
