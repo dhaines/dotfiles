@@ -80,6 +80,7 @@
     } + "/Xresources.dark"
   );
 
+  programs.dircolors.enable = true;
   programs.zathura.enable = true;
 
   programs.git = {
