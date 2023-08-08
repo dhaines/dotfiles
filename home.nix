@@ -43,6 +43,8 @@
     yq
     zoom-us
 
+    terraform
+
     nfs-utils
 
     nerdfonts
