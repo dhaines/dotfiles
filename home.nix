@@ -43,6 +43,8 @@
     yq
     zoom-us
 
+    nfs-utils
+
     nerdfonts
     gnome.gnome-font-viewer
 

@@ -55,6 +55,7 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "nfs" ];
 
   systemd.network.enable = true;
   systemd.network.wait-online.anyInterface = true;
@@ -98,6 +99,8 @@
   };
 
   services.usbmuxd.enable = true;
+
+  services.rpcbind.enable = true;
 
   users.users.dhaines = {
     isNormalUser = true;
