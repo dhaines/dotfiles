@@ -13,6 +13,7 @@
     cloud-nuke
     feh
     file
+    fluxcd
     fping
     github-cli
     gnumeric
@@ -20,6 +21,7 @@
     jq
     kubectl
     kubernetes-helm
+    kubevirt
     minicom
     mplayer
     ncmpc
@@ -45,6 +47,7 @@
 
     terraform
 
+    cifs-utils
     nfs-utils
 
     nerdfonts
@@ -70,6 +73,8 @@
     gcc
     node2nix
   ];
+
+  services.ssh-agent.enable = true;
 
   xresources.extraConfig = builtins.readFile (
     pkgs.fetchFromGitHub {
