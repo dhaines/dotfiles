@@ -45,6 +45,8 @@
     yq
     zoom-us
 
+    urxvt_font_size
+
     terraform
 
     cifs-utils
@@ -127,6 +129,7 @@
     enable = true;
     extraConfig = {
       saveLines = 65535;
+      "perl-ext-common" = "font-size";
     };
     fonts = [
       "xft:SauceCodePro Nerd Font Mono:pixelsize=15"
