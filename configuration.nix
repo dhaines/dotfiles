@@ -83,7 +83,10 @@
   virtualisation.libvirtd.qemu.swtpm.enable = true;
   networking.firewall.checkReversePath = false;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    package = pkgs.docker_24;
+  };
 
   services.resolved.enable = true;
 
