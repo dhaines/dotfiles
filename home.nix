@@ -38,6 +38,7 @@
     tree
     unzip
     virt-manager
+    virt-viewer
     wally-cli
     whois
     xclip
