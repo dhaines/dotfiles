@@ -5,7 +5,12 @@
 { config, pkgs, lib, ... }:
 
 {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = ["nix-command" "flakes"];
+    tarball-ttl = 0;
+    trusted-users = [ "dhaines" ];
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -48,11 +53,6 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware.keyboard.zsa.enable = true;
-
-  nix.settings = {
-    tarball-ttl = 1;
-    trusted-users = [ "dhaines" ];
-  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "nfs" ];
