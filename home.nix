@@ -11,6 +11,10 @@
     DISABLE_TELEMETRY = "";
   };
 
+  home.sessionPath = [
+    "$HOME/.krew/bin"
+  ];
+
   home.packages = with pkgs; [
     awscli2
     cloud-nuke
