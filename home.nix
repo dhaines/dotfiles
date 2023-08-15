@@ -19,6 +19,7 @@
     gnumeric
     ifuse
     jq
+    krew
     kubectl
     kubernetes-helm
     kubevirt
