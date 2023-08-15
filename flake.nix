@@ -17,12 +17,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
       chaos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-	  ./configuration.nix
+          ./configuration.nix
           ./hosts/chaos
           home-manager.nixosModules.home-manager
           {

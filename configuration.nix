@@ -1,15 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   nix.settings = {
     auto-optimise-store = true;
     experimental-features = ["nix-command" "flakes"];
     tarball-ttl = 0;
-    trusted-users = [ "dhaines" ];
+    trusted-users = ["dhaines"];
   };
 
   environment.systemPackages = with pkgs; [
@@ -25,7 +27,7 @@
 
   environment.etc = {
     "ovmf/edk2-x86_64-secure-code.fd" = {
-       source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
+      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
     };
     "resolv.conf".source = lib.mkForce "/run/systemd/resolve/resolv.conf";
     "systemd/network/99-ethernet-default-dhcp.network.d/50-use-domains.conf".text = ''
@@ -34,14 +36,14 @@
 
       [DHCP]
       UseDomains=true
-      '';
+    '';
     "systemd/network/99-wireless-client-dhcp.network.d/50-use-domains.conf".text = ''
       [Network]
       MulticastDNS=resolve
 
       [DHCP]
       UseDomains=true
-      '';
+    '';
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -55,7 +57,7 @@
   hardware.keyboard.zsa.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "nfs" ];
+  boot.supportedFilesystems = ["nfs"];
 
   systemd.network.enable = true;
   systemd.network.wait-online.anyInterface = true;
@@ -79,7 +81,7 @@
   networking.wireless.userControlled.enable = true;
 
   virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
+  virtualisation.libvirtd.qemu.ovmf.packages = [pkgs.OVMFFull.fd];
   virtualisation.libvirtd.qemu.swtpm.enable = true;
   networking.firewall.checkReversePath = false;
 
@@ -107,7 +109,7 @@
 
   users.users.dhaines = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "docker" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "libvirtd" "docker" "video"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
   };
 
