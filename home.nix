@@ -83,6 +83,7 @@
     tree-sitter
     gcc
     node2nix
+    ripgrep
   ];
 
   services.ssh-agent.enable = true;
