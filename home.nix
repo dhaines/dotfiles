@@ -84,6 +84,7 @@
     gcc
     node2nix
     ripgrep
+    # need fd-find or some such
   ];
 
   services.ssh-agent.enable = true;
