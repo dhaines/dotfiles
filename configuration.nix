@@ -7,9 +7,9 @@
   lib,
   ...
 }: {
-  #services.qemuGuest.enable = true;
-  #users.mutableUsers = false;
-  #users.users.dhaines.initialPassword = "1234qwer";
+  # services.qemuGuest.enable = true;
+  # users.mutableUsers = false;
+  # users.users.dhaines.initialPassword = "1234qwer";
 
   nix.settings = {
     auto-optimise-store = true;
