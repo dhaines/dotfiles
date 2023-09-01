@@ -17,12 +17,14 @@
 
   home.packages = with pkgs; [
     awscli2
+    cifs-utils
     cloud-nuke
     feh
     file
     fluxcd
     fping
     github-cli
+    gnome.gnome-font-viewer
     gnumeric
     ifuse
     jq
@@ -30,21 +32,30 @@
     kubectl
     kubernetes-helm
     kubevirt
+    linux-manual
+    man-pages
     minicom
     mplayer
     ncmpc
+    nerdfonts
+    nfs-utils
     nmap
     openssl
     parallel
     pavucontrol
+    posix_man_pages
     pstree
+    pulsarctl
     pwgen
+    python311Packages.ipython
     scrot
     slack
     talosctl
     terminus_font
+    terraform
     tree
     unzip
+    urxvt_font_size
     virt-manager
     virt-viewer
     wally-cli
@@ -54,37 +65,19 @@
     yq
     zoom-us
 
-    urxvt_font_size
-
-    terraform
-
-    cifs-utils
-    nfs-utils
-
-    nerdfonts
-    gnome.gnome-font-viewer
-
-    linux-manual
-    man-pages
-    posix_man_pages
-
-    pulsarctl
-
-    python311Packages.ipython
-
-    #neovim
+    # LunarVim packages
+    cargo
+    fd
+    gcc
     gnumake
+    lazygit
+    node2nix
+    nodejs
+    python311Full
     python311Packages.pip
     python311Packages.pynvim
-    python311Full
-    nodejs
-    lazygit
-    cargo
-    tree-sitter
-    gcc
-    node2nix
     ripgrep
-    # need fd-find or some such
+    tree-sitter
   ];
 
   services.ssh-agent.enable = true;
