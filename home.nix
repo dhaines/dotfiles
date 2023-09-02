@@ -100,6 +100,9 @@
     userName = "David Haines";
     userEmail = "dhaines@gmail.com";
     lfs.enable = true;
+    extraConfig = {
+      push.autoSetupRemote = true;
+    };
   };
 
   programs.bash = {
