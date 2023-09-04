@@ -19,6 +19,7 @@
     awscli2
     cifs-utils
     cloud-nuke
+    docker-compose
     feh
     file
     fluxcd
