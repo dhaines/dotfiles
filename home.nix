@@ -119,6 +119,69 @@
       "ls"
       "pwd"
     ];
+    historyFileSize = -1;
+    initExtra = ''
+      BLACK="\[\033[0;30m\]"
+      LIGHT_BLACK="\[\033[1;30m\]"
+      RED="\[\033[0;31m\]"
+      LIGHT_RED="\[\033[1;31m\]"
+      GREEN="\[\033[0;32m\]"
+      LIGHT_GREEN="\[\033[1;32m\]"
+      YELLOW="\[\033[0;33m\]"
+      LIGHT_YELLOW="\[\033[1;33m\]"
+      BLUE="\[\033[0;34m\]"
+      LIGHT_BLUE="\[\033[1;34m\]"
+      PURPLE="\[\033[0;35m\]"
+      LIGHT_PURPLE="\[\033[1;35m\]"
+      CYAN="\[\033[0;36m\]"
+      LIGHT_CYAN="\[\033[1;36m\]"
+      WHITE="\[\033[0;37m\]"
+      LIGHT_WHITE="\[\033[1;37m\]"
+      COLOR_NONE="\[\e[0m\]"
+
+      function parse_git_branch(){
+        git branch --show-current 2> /dev/null | sed -e 's/\(.*\)/(\1) /'
+      }
+
+      function set_branch() {
+        branch=$(parse_git_branch)
+        BRANCH="''${branch}"
+      }
+
+      function set_k8s_namespace() {
+        kubectl config view --minify -o jsonpath="{.contexts[0].context.namespace}" 2> /dev/null
+      }
+
+      function set_k8s_context() {
+        kubectl config current-context 2> /dev/null
+      }
+
+      function set_k8s_prompt () {
+        CONTEXT=$(set_k8s_context)
+        NAMESPACE=$(set_k8s_namespace)
+        K8S="[''${CONTEXT}|''${NAMESPACE}] "
+      }
+
+      function set_prompt_symbol () {
+        if test $1 -eq 0 ; then
+            PROMPT_SYMBOL="\$"
+        else
+            PROMPT_SYMBOL="$1 \$"
+        fi
+      }
+
+      function set_bash_prompt () {
+        set_prompt_symbol $?
+        set_branch
+        set_k8s_prompt
+        PS1="
+      ''${PURPLE}''${BRANCH}''${CYAN}''${K8S}
+      ''${YELLOW}\u@\h:''${COLOR_NONE} \w''${COLOR_NONE}
+      ''${PROMPT_SYMBOL} "
+      }
+
+      PROMPT_COMMAND=set_bash_prompt
+    '';
   };
 
   programs.less.enable = true;
