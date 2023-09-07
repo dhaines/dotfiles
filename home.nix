@@ -52,6 +52,7 @@
     scrot
     slack
     talosctl
+    tcpdump
     terminus_font
     terraform
     tree
@@ -61,6 +62,7 @@
     virt-viewer
     wally-cli
     whois
+    wireshark
     xclip
     xdotool
     yq
