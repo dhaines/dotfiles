@@ -10,6 +10,12 @@
   # services.qemuGuest.enable = true;
   # users.mutableUsers = false;
   # users.users.dhaines.initialPassword = "1234qwer";
+  # virtualisation.vmVariant = {
+  #   virtualisation = {
+  #     memorySize = 2048;
+  #     cores = 2;
+  #   };
+  # };
 
   nix.settings = {
     auto-optimise-store = true;
