@@ -16,9 +16,12 @@
   ];
 
   home.packages = with pkgs; [
+
     awscli2
     cifs-utils
     cloud-nuke
+    dex
+    dig
     docker-compose
     feh
     file
@@ -44,6 +47,7 @@
     openssl
     parallel
     pavucontrol
+    polkit_gnome
     posix_man_pages
     pstree
     pulsarctl
@@ -69,6 +73,7 @@
     zoom-us
 
     # LunarVim packages
+
     cargo
     fd
     gcc
@@ -81,7 +86,20 @@
     python311Packages.pynvim
     ripgrep
     tree-sitter
+
   ];
+
+  home.file.".config/autostart/polkit-gnome-authentication-agent-1.desktop".text = builtins.concatStringsSep "\n" (
+    builtins.filter (x: (builtins.match "^(OnlyShowIn|AutostartCondition)=.*" x) == null) (
+      builtins.filter builtins.isString (
+        builtins.split "\n" (
+          builtins.readFile (
+            pkgs.polkit_gnome + /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+          )
+        )
+      )
+    )
+  );
 
   services.ssh-agent.enable = true;
 
@@ -344,8 +362,7 @@
   xsession.windowManager.i3.enable = true;
   xsession.windowManager.i3.config.modifier = "Mod4";
   xsession.windowManager.i3.config.startup = [
-    #{ command = "firefox"; }
-    #{ command = "slack"; }
+    { command = "dex --autostart"; }
   ];
   xsession.windowManager.i3.config.keybindings = let
     modifier = config.xsession.windowManager.i3.config.modifier;

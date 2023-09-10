@@ -106,6 +106,7 @@
 
   security.sudo.wheelNeedsPassword = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -125,6 +126,7 @@
 
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
+  programs._1password-gui.polkitPolicyOwners = ["dhaines"];
 
   programs.dconf.enable = true;
 
