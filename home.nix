@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
 
+    abiword
     awscli2
     cifs-utils
     cloud-nuke
