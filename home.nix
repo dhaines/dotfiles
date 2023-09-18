@@ -102,6 +102,9 @@
     )
   );
 
+  services.autorandr.enable = true;
+  programs.autorandr.enable = true;
+
   services.ssh-agent.enable = true;
 
   xresources.extraConfig = builtins.readFile (

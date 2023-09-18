@@ -18,47 +18,47 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/50e0a8a1-c7f4-471f-bcce-7c7db6429bd4";
+    device = "/dev/disk/by-uuid/d7a0a578-2155-44ff-a6f2-5d725630204d";
     fsType = "ext4";
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/d9eede5f-7e3d-4154-95b3-18127e6f8021";
+    device = "/dev/disk/by-uuid/35155848-f997-455a-ac19-1a8daffcfa3a";
     fsType = "ext4";
   };
 
   fileSystems."/var" = {
-    device = "/dev/disk/by-uuid/85b678f4-7415-4ced-b2fa-5a79dbdc5f39";
+    device = "/dev/disk/by-uuid/3a4909c0-cacd-4c61-b152-1a4f3d4df23d";
     fsType = "ext4";
   };
 
   fileSystems."/var/lib/docker" = {
-    device = "/dev/disk/by-uuid/5f876319-b826-429c-aaef-8041023c122c";
+    device = "/dev/disk/by-uuid/df0e2d4d-aaf2-495f-af44-86b1d32b2cb7";
     fsType = "ext4";
   };
 
   fileSystems."/var/lib/libvirt" = {
-    device = "/dev/disk/by-uuid/9e9c20ee-cf18-4667-a718-29519ac1c964";
+    device = "/dev/disk/by-uuid/a1631437-72c6-4d42-8aea-2acd88a860c2";
     fsType = "ext4";
   };
 
   fileSystems."/opt" = {
-    device = "/dev/disk/by-uuid/6fd144a7-0052-4bf7-b7db-ce601cddef3b";
+    device = "/dev/disk/by-uuid/d6032804-6b87-4734-a2f4-29b56d830d90";
     fsType = "ext4";
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/3f3555b9-fe6e-4dc6-832b-b3c98e1dc05e";
+    device = "/dev/disk/by-uuid/e96b8736-f8df-41b1-8b83-34bb003cd142";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/5AC0-68A7";
+    device = "/dev/disk/by-uuid/9611-8998";
     fsType = "vfat";
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/1fd87315-8be8-4c63-89e8-a522bd454571";}
+    {device = "/dev/disk/by-uuid/e2e44089-cb08-43c2-8cb3-40c73267eca4";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
