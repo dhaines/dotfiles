@@ -39,6 +39,11 @@
     "ovmf/edk2-x86_64-secure-code.fd" = {
       source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
     };
+    "lvm/lvm.conf".text = ''
+      devices {
+        issue_discards = 1
+      }
+    '';
     "resolv.conf".source = lib.mkForce "/run/systemd/resolve/resolv.conf";
     "systemd/network/99-ethernet-default-dhcp.network.d/50-use-domains.conf".text = ''
       [Network]
