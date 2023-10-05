@@ -49,6 +49,7 @@
     openssl
     parallel
     pavucontrol
+    pciutils
     polkit_gnome
     posix_man_pages
     pstree
@@ -64,6 +65,7 @@
     tree
     unzip
     urxvt_font_size
+    usbutils
     virt-manager
     virt-viewer
     wally-cli
@@ -75,7 +77,6 @@
     zoom-us
 
     # LunarVim packages
-
     cargo
     fd
     gcc
