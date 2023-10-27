@@ -296,7 +296,7 @@
           #sidebar-box{
             --uc-sidebar-width: 35px;
             --uc-sidebar-hover-width: 210px;
-            --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
+            --uc-autohide-sidebar-delay: 0ms;
             position: relative;
             min-width: var(--uc-sidebar-width) !important;
             width: var(--uc-sidebar-width) !important;
