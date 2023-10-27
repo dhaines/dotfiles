@@ -20,6 +20,7 @@
     abiword
     ansible
     awscli2
+    b612
     cifs-utils
     cloud-nuke
     dex
@@ -29,16 +30,20 @@
     file
     fluxcd
     fping
+    freerdp
     github-cli
     gnome.gnome-font-viewer
     gnumeric
+    graphviz
     ifuse
     jq
     krew
     kubectl
     kubernetes-helm
     kubevirt
+    libpcap
     linux-manual
+    lsof
     man-pages
     minicom
     mplayer
@@ -47,6 +52,7 @@
     nfs-utils
     nmap
     openssl
+    packer
     parallel
     pavucontrol
     pciutils
@@ -58,10 +64,14 @@
     python311Packages.ipython
     scrot
     slack
+    socat
+    swtpm
     talosctl
     tcpdump
+    teams-for-linux
     terminus_font
     terraform
+    tigervnc
     tree
     unzip
     urxvt_font_size
@@ -82,6 +92,7 @@
     gcc
     gnumake
     lazygit
+    lemminx
     node2nix
     nodejs
     python311Full
