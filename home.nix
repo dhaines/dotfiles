@@ -383,13 +383,13 @@
 
   gtk = {
     enable = true;
-    gtk2.extraConfig = "gtk-application-prefer-dark-theme = true";
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
+    theme.name = "Adwaita-dark";
+  };
+
+  qt = {
+    enable = true;
+    style.name = "adwaita-dark";
+    platformTheme = "gnome";
   };
 
   xsession.windowManager.i3.enable = true;
