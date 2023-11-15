@@ -16,17 +16,18 @@
   ];
 
   home.packages = with pkgs; [
-
     abiword
     ansible
     awscli2
     b612
+    cdrtools
     cifs-utils
     cloud-nuke
     dex
     dig
     docker-compose
     feh
+    ffmpeg
     file
     fluxcd
     fping
@@ -52,6 +53,7 @@
     nfs-utils
     nmap
     openssl
+    p7zip
     packer
     parallel
     pavucontrol
@@ -62,6 +64,8 @@
     pulsarctl
     pwgen
     python311Packages.ipython
+    s3cmd
+    s5cmd
     scrot
     slack
     socat
@@ -93,6 +97,7 @@
     gnumake
     lazygit
     lemminx
+    nil
     node2nix
     nodejs
     python311Full
@@ -100,7 +105,6 @@
     python311Packages.pynvim
     ripgrep
     tree-sitter
-
   ];
 
   home.file.".config/autostart/polkit-gnome-authentication-agent-1.desktop".text = builtins.concatStringsSep "\n" (
@@ -185,6 +189,9 @@
       "pwd"
     ];
     historyFileSize = -1;
+    profileExtra = ''
+      ssh-add
+    '';
     initExtra = ''
       BLACK="\[\033[0;30m\]"
       LIGHT_BLACK="\[\033[1;30m\]"
@@ -407,7 +414,7 @@
   xsession.windowManager.i3.enable = true;
   xsession.windowManager.i3.config.modifier = "Mod4";
   xsession.windowManager.i3.config.startup = [
-    { command = "dex --autostart"; }
+    {command = "dex --autostart";}
   ];
   xsession.windowManager.i3.config.keybindings = let
     modifier = config.xsession.windowManager.i3.config.modifier;
