@@ -453,6 +453,7 @@
       "${modifier}+backslash" = "split toggle";
       "${modifier}+d" = "exec ${pkgs.i3}/bin/i3-dmenu-desktop";
       "${modifier}+Shift+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+      "XF86Display" = "exec \"bash -c 'sleep 1.5 ; ${pkgs.autorandr}/bin/autorandr -c'\"";
     };
   xsession.windowManager.i3.config.modes = {
     resize = {
