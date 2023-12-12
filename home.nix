@@ -20,23 +20,29 @@
     ansible
     awscli2
     b612
+    bc
     cdrtools
+    cfssl
     cifs-utils
     cloud-nuke
+    cmctl
     dex
     dig
     docker-compose
+    # fbida
     feh
     ffmpeg
     file
     fluxcd
     fping
     freerdp
+    gettext
     github-cli
     gnome.gnome-font-viewer
     gnumeric
     graphviz
     ifuse
+    inotify-tools
     jq
     krew
     kubectl
@@ -58,13 +64,14 @@
     parallel
     pavucontrol
     pciutils
+    pdfposter
     polkit_gnome
     posix_man_pages
     pstree
     pulsarctl
     pv
     pwgen
-    python311Packages.ipython
+    # python311Packages.ipython
     s3cmd
     s5cmd
     scrot
