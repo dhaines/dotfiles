@@ -62,10 +62,14 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.configurationLimit = 16;
-  boot.loader.systemd-boot.editor = false;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 16;
+      editor = false;
+    };
+    efi.canTouchEfiVariables = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
